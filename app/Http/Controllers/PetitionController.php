@@ -20,8 +20,12 @@ class PetitionController extends Controller
 
     public function store(Request $request)
     {
+        $request->merge([
+            'author_id' => rand(1, 3),
+        ]);
+
         $petition = Petition::create($request->only([
-            'title', 'description', 'category', 'author', 'signees',
+            'title', 'description', 'category', 'author_id', 'signees',
         ]));
 
         return new PetitionResource($petition);
@@ -34,8 +38,12 @@ class PetitionController extends Controller
 
     public function update(Request $request, Petition $petition)
     {
+        $request->merge([
+            'author_id' => rand(1, 3),
+        ]);
+
         $petition->update($request->only([
-            'title', 'description', 'category', 'author', 'signees',
+            'title', 'description', 'category', 'author_id', 'signees',
         ]));
 
         return new PetitionResource($petition);

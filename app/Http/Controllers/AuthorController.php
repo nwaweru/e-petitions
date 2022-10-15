@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Author;
-use Illuminate\Http\Response;
 use App\Http\Resources\AuthorCollection;
 use App\Http\Resources\AuthorResource;
+use App\Models\Author;
+use Illuminate\Http\Response;
 
 class AuthorController extends Controller
 {

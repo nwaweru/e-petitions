@@ -19,7 +19,7 @@ class PetitionResource extends JsonResource
             'title' => $this->title,
             'description' => $this->description,
             'category' => $this->category,
-            'author' => $this->author,
+            'author' => new AuthorResource($this->author),
             'signees' => $this->signees,
         ];
     }

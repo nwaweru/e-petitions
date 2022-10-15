@@ -2,8 +2,9 @@
 
 namespace Database\Seeders;
 
-use Illuminate\Database\Seeder;
 use App\Models\Author;
+use App\Models\Petition;
+use Illuminate\Database\Seeder;
 
 class AuthorSeeder extends Seeder
 {
@@ -14,6 +15,9 @@ class AuthorSeeder extends Seeder
      */
     public function run()
     {
-        Author::factory()->times(10)->create();
+        Author::factory()
+            ->count(3)
+            ->has(Petition::factory()->count(10))
+            ->create();
     }
 }

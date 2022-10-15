@@ -13,7 +13,12 @@ class Petition extends Model
         'title',
         'description',
         'category',
-        'author',
+        'author_id',
         'signees',
     ];
+
+    public function author()
+    {
+        return $this->belongsTo(Author::class);
+    }
 }

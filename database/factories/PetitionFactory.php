@@ -20,7 +20,7 @@ class PetitionFactory extends Factory
             'title' => $this->faker->word,
             'category' => $this->faker->text(50),
             'description' => $this->faker->text(200),
-            'author' => $this->faker->name,
+            'author_id' => $this->faker->numberBetween(1, 3),
             'signees' => $this->faker->numberBetween(0, 1000000),
         ];
     }

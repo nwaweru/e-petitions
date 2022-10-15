@@ -12,4 +12,9 @@ class Author extends Model
     protected $fillable = [
         'name',
     ];
+
+    public function petitions()
+    {
+        return $this->hasMany(Petition::class);
+    }
 }
